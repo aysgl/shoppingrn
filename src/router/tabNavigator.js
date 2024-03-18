@@ -1,14 +1,16 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Favorites from '../screens/Favorites';
 import {SCREEN} from '../utils/routes';
-import TabIcon from '../components/TabIcon'; // Import TabIcon component
+import TabIcon from '../components/TabIcon';
 import {COLOR} from '../theme/color';
 import {SearchNormal} from 'iconsax-react-native';
 import {TouchableOpacity} from 'react-native';
 import Cart from '../screens/Cart';
+import {Text} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,10 +18,20 @@ function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={({route, navigation}) => ({
-        tabBarActiveTintColor: COLOR.PRIMARY,
+        tabBarActiveTintColor: COLOR.BLACK,
+        headerShadowVisible: false,
+        tabBarStyle: {
+          borderTopWidth: 0,
+          elevation: 0,
+        },
         tabBarIcon: ({focused, color, size}) => (
           <TabIcon focused={focused} color={color} size={size} route={route} />
         ),
+        tabBarLabel: ({focused}) => {
+          return focused ? (
+            <Text style={{color: COLOR.BLACK, fontSize: 8}}>●</Text>
+          ) : null;
+        },
         headerRight: () => (
           <TouchableOpacity onPress={() => navigation.navigate(SCREEN.SEARCH)}>
             <SearchNormal

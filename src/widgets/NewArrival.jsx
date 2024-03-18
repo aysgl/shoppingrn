@@ -1,20 +1,16 @@
 import {FlatList, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Card from '../components/Card';
-import {getRequest} from '../services/verbs';
-import {URL} from '../services/url';
+import {fetchProducts} from '../services/api';
+import Seperator from '../components/Seperator';
 
 export default function NewArrival() {
-  const [data, setData] = useState();
-
-  const getAllProducts = () => {
-    getRequest(URL.PRODUCTS_URL)
-      .then(res => setData(res))
-      .catch(err => console.log(err));
-  };
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getAllProducts();
+    fetchProducts()
+      .then(res => setProducts(res))
+      .catch(err => console.log(err));
   }, []);
 
   return (
@@ -22,9 +18,10 @@ export default function NewArrival() {
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={data}
-        renderItem={({item}) => <Card item={item} />}
+        data={products}
+        renderItem={({item}) => <Card data={item} />}
       />
+      <Seperator />
     </View>
   );
 }

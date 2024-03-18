@@ -6,4 +6,5 @@ export const SCREEN = {
   CART: 'Cart',
   SEARCH: 'Search',
   TAB: 'TabNavigation',
+  PRODUCT_DETAILS: 'Product Details',
 };

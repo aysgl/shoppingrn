@@ -1,5 +1,6 @@
 import Advertisement from '../components/Advertisement';
 import BestSeller from './BestSeller';
+import Category from './Category';
 import NewArrival from './NewArrival';
 
 export const widgets = [
