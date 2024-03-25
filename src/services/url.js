@@ -1,8 +1,9 @@
 export const URL = {
-  BASE_URL: 'https://fakestoreapi.com',
+  BASE_URL: 'http://localhost:3001',
   PRODUCTS_URL: '/products',
-  CATEGORIES_URL: '/products/categories',
-  CATEGORY_URL: '/products/category',
-  CARTS_URL: '/carts',
-  LOGIN_URL: '/auth/login',
+  WOMAN_URL: '/woman',
+  MAN_URL: '/man',
+  CHILDREN_URL: '/children',
+  CART_URL: '/cart',
+  LOGIN_URL: '/login',
 };

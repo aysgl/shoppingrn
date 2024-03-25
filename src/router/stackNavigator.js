@@ -9,6 +9,9 @@ import {ArrowLeft} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 import ProductDetail from '../screens/ProductDetail';
 import {TouchableOpacity} from 'react-native';
+import Login from '../screens/Login';
+import CheckOut from '../screens/CheckOut';
+import Register from '../screens/Register';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +34,9 @@ function StackNavigator() {
         component={TabNavigator}
       />
       <Stack.Screen name={SCREEN.SEARCH} component={Search} />
+      <Stack.Screen name={SCREEN.LOGIN} component={Login} />
+      <Stack.Screen name={SCREEN.CHECKOUT} component={CheckOut} />
+      <Stack.Screen name={SCREEN.REGISTER} component={Register} />
       <Stack.Screen
         options={{
           headerShown: false,

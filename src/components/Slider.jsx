@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/no-unstable-nested-components */
 import React, {useState} from 'react';
 import {SectionList, TouchableOpacity, View} from 'react-native';
 // import {TouchableOpacity} from 'react-native-gesture-handler';

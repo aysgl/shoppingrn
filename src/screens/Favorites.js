@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import {
   FlatList,
   Image,
@@ -6,49 +7,57 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
 import {screenStyles} from '../style/screenStyle';
 import {COLOR} from '../theme/color';
-import {fetchCart} from '../services/api';
 import HeartIcon from '../components/HeartIcon';
+import {useDispatch, useSelector} from 'react-redux';
+import {getFavorites, updateFavorite} from '../redux/productsAction';
 
 export default function Favorites() {
-  const [carts, setCarts] = useState([]);
+  const favorites = useSelector(state => state.products.favorites);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchCart()
-      .then(res => setCarts(res))
-      .catch(err => console.log(err));
-  }, []);
+    dispatch(getFavorites());
+  }, [dispatch, favorites]);
 
-  const renderItem = ({item}) => (
-    <TouchableOpacity style={styles.cart}>
-      <Image
-        source={{uri: item?.images[0]}}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <View style={styles.item}>
-        <View>
-          <Text style={styles.title}>
-            {item.brand} {item.model}
-          </Text>
-          <Text style={styles.category}>{item.category}</Text>
+  const renderItem = ({item}) => {
+    return (
+      <TouchableOpacity style={styles.cart}>
+        <Image
+          source={{uri: item.images?.[0]}}
+          style={styles.image}
+          resizeMode="contain"
+        />
+        <View style={styles.item}>
+          <View>
+            <Text style={styles.title}>
+              {item.brand} {item.model}
+            </Text>
+            <Text style={styles.category}>{item.category}</Text>
+          </View>
+          <View>
+            <HeartIcon
+              favorite={item?.favorite}
+              updateFavorites={() =>
+                dispatch(
+                  updateFavorite({id: item.id, favorite: !item.favorite}),
+                )
+              }
+            />
+          </View>
         </View>
-        <View>
-          <HeartIcon />
-        </View>
-      </View>
-    </TouchableOpacity>
-  );
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <FlatList
       style={screenStyles.body}
-      data={carts}
+      data={favorites}
       renderItem={renderItem}
       ListEmptyComponent={
-        <Text style={styles.empty}>Your favoritelist is empty.</Text>
+        <Text style={styles.empty}>Your favorite list is empty.</Text>
       }
       keyExtractor={(item, index) => index.toString()}
     />

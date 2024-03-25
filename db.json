@@ -1,0 +1,384 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "brand": "Nike",
+      "category": "Woman",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": ["36", "37", "38", "39"],
+      "price": 150,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6004834-6adf-493b-8d6e-8ef5e1556216/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c4e9864-1e8f-45c1-97a4-20b571f78335/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1e8ec42-880c-4350-b3a3-3d2e3a506bfc/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png"
+      ]
+    },
+    {
+      "id": "2",
+      "brand": "Adidas",
+      "category": "Man",
+      "model": "Ultraboost 21",
+      "color": "Core Black/Grey Six/Solar Red",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 180,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Adidas Ultraboost 21 offers a comfortable, responsive ride with a sleek design. It features Boost cushioning technology and a supportive Primeknit upper.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40e9a096-e6cc-4c39-aec8-46a330f80681/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a605e57-6a9c-44a6-88c1-bdf486b9aa33/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18c8fc53-0dfe-45e4-aff9-6f3de49d34f0/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png"
+      ]
+    },
+    {
+      "id": "3",
+      "brand": "New Balance",
+      "category": "Children",
+      "model": "Fresh Foam 1080v11",
+      "color": "Black/White",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 100,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The New Balance Fresh Foam 1080v11 offers a plush ride with ample cushioning and a breathable mesh upper. It is ideal for long-distance running and everyday wear.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f5ce9401-eb95-4df0-8ae1-dac2a9fe8847/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6b19dc55-ddec-42c3-9db1-fec0a9f676e8/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8de0a8b6-8276-49d7-a25d-5a6c576413ed/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png"
+      ]
+    },
+    {
+      "id": "4",
+      "brand": "Puma",
+      "category": "Woman",
+      "model": "Future Rider Twofold",
+      "color": "Puma Black/White",
+      "size": ["36", "37", "38", "39"],
+      "price": 90,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Puma Future Rider Twofold combines retro style with modern comfort. It features a nylon upper with suede overlays and a cushioned footbed for all-day wearability.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb1951e7-0600-4f7a-9b26-12be8cd2bd01/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/162a3c7d-d32b-46dd-b9d1-631494f6f2db/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/44fdb67b-6626-4463-85e3-8c181c75c8b1/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png"
+      ]
+    },
+    {
+      "id": "5",
+      "brand": "Nike",
+      "category": "Man",
+      "model": "Air Zoom Pegasus 37",
+      "color": "Blue/White",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 120,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Nike Air Zoom Pegasus 37 is designed for runners of all levels. It features a lightweight mesh upper, responsive cushioning, and a durable outsole for traction.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-ec0d69e5-4700-48e7-810a-20f1d8249316/p-6000-ayakkab%C4%B1-zxj309.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-c5637e94-0bcc-46ba-83f5-46e79e3eba07/p-6000-ayakkab%C4%B1-zxj309.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-e53cacab-113c-47f8-8ca3-871dd9fcd2e3/p-6000-ayakkab%C4%B1-zxj309.png"
+      ]
+    },
+    {
+      "id": "6",
+      "brand": "Adidas",
+      "category": "Woman",
+      "model": "Superstar",
+      "color": "White/Black",
+      "size": ["36", "37", "38", "39"],
+      "price": 80,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Adidas Superstar is a timeless classic. It features a leather upper, iconic shell toe, and rubber cupsole. Perfect for casual wear.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/759a1463-5df0-4fcb-b3ec-cc78a5f5deb2/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/144303e8-f3a5-4cf5-a197-7187d477f6db/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360c1ef7-311d-429d-952d-25e190e38752/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png"
+      ]
+    },
+    {
+      "id": "7",
+      "brand": "New Balance",
+      "category": "Man",
+      "model": "Fresh Foam Roav Knit",
+      "color": "Grey/Black",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 95,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The New Balance Fresh Foam Roav Knit offers a comfortable and stylish design. It features a knit upper, Fresh Foam midsole, and Ultra Heel for a secure fit.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/549af9e7-3a3c-4b70-8a92-206b8c5d348b/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9381dff7-05aa-4e1b-a35d-d8e1b08040e2/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8e484b5-1668-4002-a833-6c16170ceb73/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png"
+      ]
+    },
+    {
+      "id": "8",
+      "brand": "Puma",
+      "category": "Man",
+      "model": "RS-X³ Puzzle",
+      "color": "White/Black/Yellow",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 110,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Puma RS-X³ Puzzle offers a bold and futuristic design. It features a textile upper, chunky sole, and eye-catching colorway.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2a3367c8-2dd0-42a5-8eb2-adfa2b7ed48f/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/acab406b-b0e6-4210-a41f-69037f4f9138/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5dc4c0ca-6204-40e4-8e86-6562a67e0010/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png"
+      ]
+    },
+    {
+      "id": "9",
+      "brand": "Nike",
+      "category": "Children",
+      "model": "Revolution 5",
+      "color": "Grey/Pink",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 60,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Nike Revolution 5 is designed for comfort and durability. It features a lightweight mesh upper, soft foam midsole, and reinforced heel for support.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ce9d309e-d8d5-4917-9547-6bd0bee064a7/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0557680c-1e7d-4a15-932b-b82a729b3ff4/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/422ede49-2741-4778-a74b-32877e19d96b/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png"
+      ]
+    },
+    {
+      "id": "10",
+      "brand": "Adidas",
+      "category": "Children",
+      "model": "Ultraboost 20",
+      "color": "Blue/Green",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 70,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Adidas Ultraboost 20 is a lightweight and flexible shoe for active kids. It features a breathable knit upper, responsive cushioning, and a durable outsole.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f05edbb-a5f2-4b00-95a6-808c7dd48c97/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18851f4a-66d1-44b3-861e-d4c3fc40ea35/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d898427d-c434-4393-a328-63c3aba787bd/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png"
+      ]
+    }
+  ],
+  "productsWoman": [
+    {
+      "id": "1",
+      "brand": "Nike",
+      "category": "Woman",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": ["36", "37", "38", "39"],
+      "price": 150,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6004834-6adf-493b-8d6e-8ef5e1556216/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c4e9864-1e8f-45c1-97a4-20b571f78335/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1e8ec42-880c-4350-b3a3-3d2e3a506bfc/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png"
+      ]
+    },
+    {
+      "id": "4",
+      "brand": "Puma",
+      "category": "Woman",
+      "model": "Future Rider Twofold",
+      "color": "Puma Black/White",
+      "size": ["36", "37", "38", "39"],
+      "price": 90,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Puma Future Rider Twofold combines retro style with modern comfort. It features a nylon upper with suede overlays and a cushioned footbed for all-day wearability.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb1951e7-0600-4f7a-9b26-12be8cd2bd01/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/162a3c7d-d32b-46dd-b9d1-631494f6f2db/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/44fdb67b-6626-4463-85e3-8c181c75c8b1/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png"
+      ]
+    },
+    {
+      "id": "6",
+      "brand": "Adidas",
+      "category": "Woman",
+      "model": "Superstar",
+      "color": "White/Black",
+      "size": ["36", "37", "38", "39"],
+      "price": 80,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Adidas Superstar is a timeless classic. It features a leather upper, iconic shell toe, and rubber cupsole. Perfect for casual wear.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/759a1463-5df0-4fcb-b3ec-cc78a5f5deb2/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/144303e8-f3a5-4cf5-a197-7187d477f6db/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/360c1ef7-311d-429d-952d-25e190e38752/lebron-witness-8-basketbol-ayakkab%C4%B1s%C4%B1-Hc4PFF.png"
+      ]
+    }
+  ],
+  "productsMan": [
+    {
+      "id": "2",
+      "brand": "Adidas",
+      "category": "Man",
+      "model": "Ultraboost 21",
+      "color": "Core Black/Grey Six/Solar Red",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 180,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Adidas Ultraboost 21 offers a comfortable, responsive ride with a sleek design. It features Boost cushioning technology and a supportive Primeknit upper.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40e9a096-e6cc-4c39-aec8-46a330f80681/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a605e57-6a9c-44a6-88c1-bdf486b9aa33/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18c8fc53-0dfe-45e4-aff9-6f3de49d34f0/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png"
+      ]
+    },
+    {
+      "id": "5",
+      "brand": "Nike",
+      "category": "Man",
+      "model": "Air Zoom Pegasus 37",
+      "color": "Blue/White",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 120,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Nike Air Zoom Pegasus 37 is designed for runners of all levels. It features a lightweight mesh upper, responsive cushioning, and a durable outsole for traction.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-ec0d69e5-4700-48e7-810a-20f1d8249316/p-6000-ayakkab%C4%B1-zxj309.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-c5637e94-0bcc-46ba-83f5-46e79e3eba07/p-6000-ayakkab%C4%B1-zxj309.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/i1-e53cacab-113c-47f8-8ca3-871dd9fcd2e3/p-6000-ayakkab%C4%B1-zxj309.png"
+      ]
+    },
+    {
+      "id": "7",
+      "brand": "New Balance",
+      "category": "Man",
+      "model": "Fresh Foam Roav Knit",
+      "color": "Grey/Black",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 95,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The New Balance Fresh Foam Roav Knit offers a comfortable and stylish design. It features a knit upper, Fresh Foam midsole, and Ultra Heel for a secure fit.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/549af9e7-3a3c-4b70-8a92-206b8c5d348b/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/9381dff7-05aa-4e1b-a35d-d8e1b08040e2/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b8e484b5-1668-4002-a833-6c16170ceb73/premier-3-d%C3%BC%C5%9F%C3%BCk-bilekli-kuru-%C3%A7im-zemin-kramponu-7HsR0F.png"
+      ]
+    },
+    {
+      "id": "8",
+      "brand": "Puma",
+      "category": "Man",
+      "model": "RS-X³ Puzzle",
+      "color": "White/Black/Yellow",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 110,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Puma RS-X³ Puzzle offers a bold and futuristic design. It features a textile upper, chunky sole, and eye-catching colorway.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2a3367c8-2dd0-42a5-8eb2-adfa2b7ed48f/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/acab406b-b0e6-4210-a41f-69037f4f9138/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5dc4c0ca-6204-40e4-8e86-6562a67e0010/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png"
+      ]
+    }
+  ],
+  "productsChildren": [
+    {
+      "id": "3",
+      "brand": "New Balance",
+      "category": "Children",
+      "model": "Fresh Foam 1080v11",
+      "color": "Black/White",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 100,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The New Balance Fresh Foam 1080v11 offers a plush ride with ample cushioning and a breathable mesh upper. It is ideal for long-distance running and everyday wear.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f5ce9401-eb95-4df0-8ae1-dac2a9fe8847/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6b19dc55-ddec-42c3-9db1-fec0a9f676e8/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8de0a8b6-8276-49d7-a25d-5a6c576413ed/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png"
+      ]
+    },
+    {
+      "id": "9",
+      "brand": "Nike",
+      "category": "Children",
+      "model": "Revolution 5",
+      "color": "Grey/Pink",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 60,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Nike Revolution 5 is designed for comfort and durability. It features a lightweight mesh upper, soft foam midsole, and reinforced heel for support.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ce9d309e-d8d5-4917-9547-6bd0bee064a7/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0557680c-1e7d-4a15-932b-b82a729b3ff4/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/422ede49-2741-4778-a74b-32877e19d96b/air-max-270-ayakkab%C4%B1s%C4%B1-MxJMv6.png"
+      ]
+    },
+    {
+      "id": "10",
+      "brand": "Adidas",
+      "category": "Children",
+      "model": "Ultraboost 20",
+      "color": "Blue/Green",
+      "size": ["26", "27", "28", "29", "30"],
+      "price": 70,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The Adidas Ultraboost 20 is a lightweight and flexible shoe for active kids. It features a breathable knit upper, responsive cushioning, and a durable outsole.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f05edbb-a5f2-4b00-95a6-808c7dd48c97/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18851f4a-66d1-44b3-861e-d4c3fc40ea35/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d898427d-c434-4393-a328-63c3aba787bd/court-borough-low-recraft-ayakkab%C4%B1s%C4%B1-b0FS10.png"
+      ]
+    }
+  ],
+  "carts": [
+    {
+      "id": "8",
+      "brand": "Puma",
+      "category": "Man",
+      "model": "RS-X³ Puzzle",
+      "color": "White/Black/Yellow",
+      "size": ["36", "37", "38", "39", "40", "41", "42"],
+      "price": 110,
+      "quantity": 3,
+      "favorite": false,
+      "description": "The Puma RS-X³ Puzzle offers a bold and futuristic design. It features a textile upper, chunky sole, and eye-catching colorway.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2a3367c8-2dd0-42a5-8eb2-adfa2b7ed48f/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/acab406b-b0e6-4210-a41f-69037f4f9138/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5dc4c0ca-6204-40e4-8e86-6562a67e0010/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png"
+      ]
+    }
+  ],
+  "register": [
+    {
+      "id": "41b6",
+      "email": "Aysgl.avcu@hotmail.com",
+      "username": "Aysgl",
+      "password": "Aysgl"
+    }
+  ],
+  "login": [
+    {
+      "id": "41b6",
+      "username": "Aysgl",
+      "password": "aysgl"
+    }
+  ]
+}

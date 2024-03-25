@@ -1,17 +1,17 @@
+import React, {useEffect} from 'react';
 import {TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
 import {Heart} from 'iconsax-react-native';
 import {COLOR} from '../theme/color';
 
-export default function HeartIcon() {
-  const [heartClicked, setHeartClicked] = useState(false);
+export default function HeartIcon({favorite, updateFavorites}) {
+  useEffect(() => {}, [favorite, updateFavorites]);
 
   return (
-    <TouchableOpacity onPress={() => setHeartClicked(!heartClicked)}>
+    <TouchableOpacity onPress={updateFavorites}>
       <Heart
-        color={heartClicked ? COLOR.ORANGE : COLOR.DARK_GRAY}
+        color={favorite ? COLOR.ORANGE : COLOR.DARK_GRAY}
         size={20}
-        variant={heartClicked ? 'Bold' : 'Linear'}
+        variant={favorite ? 'Bold' : 'Linear'}
       />
     </TouchableOpacity>
   );

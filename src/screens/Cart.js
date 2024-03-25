@@ -1,3 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-const-assign */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-shadow */
 import React, {useEffect, useState} from 'react';
 import {
   View,
@@ -8,90 +12,153 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {screenStyles} from '../style/screenStyle';
-import {fetchCart} from '../services/api';
 import {COLOR} from '../theme/color';
+import {useNavigation} from '@react-navigation/native';
+import {SCREEN} from '../utils/routes';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+  deleteCart,
+  getCarts,
+  updateCartItemQuantity,
+} from '../redux/cartsAction';
 
 export default function Cart() {
-  const [carts, setCarts] = useState([]);
-  const [count, setCount] = useState(1);
+  const state = useSelector(state => state.carts);
+  const [counts, setCounts] = useState({});
+  const [total, setTotal] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
 
   useEffect(() => {
-    fetchCart()
-      .then(res => setCarts(res))
-      .catch(err => console.log(err));
-  }, []);
+    dispatch(getCarts());
+  }, [dispatch]);
 
-  const renderItem = ({item}) => (
-    <TouchableOpacity style={styles.cart}>
-      <Image
-        source={{uri: item?.images[0]}}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <View style={styles.item}>
-        <Text style={styles.title}>
-          {item.brand} {item.model}
-        </Text>
-        <Text style={styles.category}>{item.category}</Text>
-        <View style={styles.priceCountContainer}>
-          <Text style={styles.price}>${item.price}</Text>
-          <View style={styles.countContainer}>
-            <TouchableOpacity
-              style={styles.minus}
-              onPress={() => {
-                setCount(Math.max(count - 1, 0));
-              }}>
-              <Text>-</Text>
-            </TouchableOpacity>
-            <Text>{count}</Text>
-            <TouchableOpacity
-              style={styles.plus}
-              onPress={() => {
-                setCount(count + 1);
-              }}>
-              <Text style={styles.plusText}>+</Text>
-            </TouchableOpacity>
+  useEffect(() => {
+    if (state.carts) {
+      let initialCounts = {};
+      let tempSubTotal = 0;
+      state.carts.forEach(item => {
+        initialCounts[item.id] = item.quantity;
+        tempSubTotal += item.price * item.quantity;
+      });
+      setCounts(initialCounts);
+      setSubTotal(tempSubTotal);
+      updateTotal();
+    }
+  }, [state.carts]);
+
+  useEffect(() => {
+    updateTotal();
+  }, [counts, state.carts]);
+
+  const updateTotal = () => {
+    let tempTotal = subTotal;
+
+    const deliveryFee = 10;
+    const discount = 0;
+
+    const totalPrice = tempTotal + deliveryFee - discount;
+    setTotal(totalPrice);
+  };
+
+  const handleIncrement = (itemId, itemQuantity) => {
+    const newQuantity = itemQuantity + 1;
+    dispatch(updateCartItemQuantity({itemId, newQuantity}));
+    setCounts(prevCounts => ({...prevCounts, [itemId]: newQuantity}));
+    updateTotal();
+  };
+
+  const handleDecrement = (itemId, itemQuantity) => {
+    if (itemQuantity > 1) {
+      const newQuantity = itemQuantity - 1;
+      dispatch(updateCartItemQuantity({itemId, newQuantity}));
+      setCounts(prevCounts => ({...prevCounts, [itemId]: newQuantity}));
+      updateTotal();
+    } else {
+      dispatch(deleteCart(itemId));
+      const {[itemId]: deletedItem, ...restCounts} = counts;
+      setCounts(restCounts);
+      updateTotal();
+    }
+  };
+
+  const renderItem = ({item}) => {
+    const itemQuantity = counts[item.id] || 1;
+    return (
+      <TouchableOpacity style={styles.cart}>
+        <Image
+          source={{uri: item.images?.[0]}}
+          style={styles.image}
+          resizeMode="contain"
+        />
+        <View style={styles.item}>
+          <Text style={styles.title}>
+            {item?.brand} {item?.model}
+          </Text>
+          <Text style={styles.category}>{item.category}</Text>
+          <View style={styles.priceCountContainer}>
+            <Text style={styles.price}>${item.price}</Text>
+            <View style={styles.countContainer}>
+              <TouchableOpacity
+                style={styles.minus}
+                onPress={() => handleDecrement(item.id, itemQuantity)}>
+                <Text>-</Text>
+              </TouchableOpacity>
+              <Text>{itemQuantity}</Text>
+              <TouchableOpacity
+                style={styles.plus}
+                onPress={() => handleIncrement(item.id, itemQuantity)}>
+                <Text style={styles.plusText}>+</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    </TouchableOpacity>
-  );
+      </TouchableOpacity>
+    );
+  };
 
   const renderFooter = () => (
     <View style={styles.footer}>
       <View style={styles.text}>
         <Text>Subtotal</Text>
-        <Text>$</Text>
+        <Text>${subTotal}</Text>
       </View>
       <View style={styles.text}>
         <Text>Delivery Fee</Text>
-        <Text>$</Text>
+        <Text>$10</Text>
       </View>
       <View style={styles.text}>
         <Text>Discount</Text>
-        <Text>%</Text>
+        <Text>%0</Text>
       </View>
       <View style={[styles.text, {paddingVertical: 30}]}>
         <Text>Total</Text>
-        <Text>$</Text>
+        <Text style={{fontSize: 20}}>${total}</Text>
       </View>
-      <TouchableOpacity style={styles.button}>
-        <Text>Check out</Text>
-      </TouchableOpacity>
     </View>
   );
 
   return (
-    <FlatList
-      style={screenStyles.body}
-      data={carts}
-      renderItem={renderItem}
-      ListEmptyComponent={
-        <Text style={styles.emptyCartText}>Your cart is empty.</Text>
-      }
-      keyExtractor={(item, index) => index.toString()}
-      ListFooterComponent={renderFooter}
-    />
+    <View style={{flex: 1, backgroundColor: COLOR.WHITE}}>
+      <FlatList
+        style={screenStyles.body}
+        data={state?.carts}
+        renderItem={renderItem}
+        ListEmptyComponent={
+          <Text style={styles.emptyCartText}>Your cart is empty.</Text>
+        }
+        keyExtractor={(item, index) => index.toString()}
+        ListFooterComponent={renderFooter}
+      />
+      <View style={{padding: 20, paddingTop: 0}}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate(SCREEN.LOGIN)}>
+          <Text>Check out</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 

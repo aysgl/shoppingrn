@@ -1,6 +1,13 @@
+/* eslint-disable no-shadow */
 /* eslint-disable react-native/no-inline-styles */
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
 import SelectNumber from '../components/SelectNumber';
@@ -10,11 +17,48 @@ import {ArrowLeft} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 import Slider from '../components/Slider';
 import HeartIcon from '../components/HeartIcon';
+import {useDispatch} from 'react-redux';
+import {
+  addToCart,
+  deleteCart,
+  getCarts,
+  updateCartItemQuantity,
+} from '../redux/cartsAction';
+import {updateFavorite} from '../redux/productsAction';
 
 export default function ProductDetail({route}) {
-  const [count, setCount] = useState(1);
   const {data} = route.params;
+
+  const [count, setCount] = useState(data.quantity);
+  const dispatch = useDispatch();
   const navigation = useNavigation();
+
+  const handleIncrement = itemId => {
+    const newQuantity = count + 1;
+    dispatch(updateCartItemQuantity({itemId, newQuantity}));
+    setCount(newQuantity);
+  };
+
+  const handleDecrement = itemId => {
+    if (count > 1) {
+      const newQuantity = count - 1;
+      dispatch(updateCartItemQuantity({itemId, newQuantity}));
+      setCount(newQuantity);
+    } else {
+      dispatch(deleteCart(itemId));
+      setCount(0);
+    }
+  };
+
+  useEffect(() => {
+    dispatch(getCarts());
+    // dispatch(updateFavorite());
+  }, [dispatch, data.quantity, data.favorite]);
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(data));
+    navigation.navigate('Cart');
+  };
 
   return (
     <View style={screenStyles.body}>
@@ -23,42 +67,41 @@ export default function ProductDetail({route}) {
         onPress={() => navigation.goBack()}>
         <ArrowLeft size={32} color={COLOR.PRIMARY} />
       </TouchableOpacity>
-
-      <Slider images={data?.images} />
-      <View style={screenStyles.container}>
-        <H2 title={`${data?.brand + ' ' + data?.model}`} />
-        <View style={styles.heart}>
-          <View>
-            <Text style={{marginBottom: 10}}>{data?.category}</Text>
-            <H3 title={`$${data?.price}`} />
+      <ScrollView>
+        <Slider images={data?.images} />
+        <View style={screenStyles.container}>
+          <H2 title={`${data?.brand + ' ' + data?.model}`} />
+          <View style={styles.heart}>
+            <View>
+              <Text style={{marginBottom: 10}}>{data?.category}</Text>
+              <H3 title={`$${data?.price}`} />
+            </View>
+            <HeartIcon
+              favorite={data?.favorite}
+              updateFavorites={() =>
+                dispatch(
+                  updateFavorite({id: data.id, favorite: !data.favorite}),
+                )
+              }
+            />
           </View>
-          <HeartIcon />
+
+          <SelectNumber sizes={data?.size} />
+
+          <Text>{data?.description}</Text>
         </View>
-
-        <SelectNumber sizes={data?.size} />
-
-        <Text>{data?.description}</Text>
-      </View>
-
+      </ScrollView>
       <View style={styles.row}>
         <View style={styles.count}>
-          <TouchableOpacity
-            style={styles.minus}
-            onPress={() => {
-              setCount(0);
-            }}>
+          <TouchableOpacity style={styles.minus} onPress={handleDecrement}>
             <Text>-</Text>
           </TouchableOpacity>
           <Text>{count}</Text>
-          <TouchableOpacity
-            style={styles.plus}
-            onPress={() => {
-              setCount(count + 1);
-            }}>
+          <TouchableOpacity style={styles.plus} onPress={handleIncrement}>
             <Text style={{color: COLOR.WHITE}}>+</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleAddToCart}>
           <Text>Add to Cart</Text>
         </TouchableOpacity>
       </View>
@@ -74,11 +117,7 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    paddingVertical: 20,
-    position: 'absolute',
-    bottom: 10,
-    right: 20,
-    left: 20,
+    padding: 20,
   },
   count: {
     width: '30%',

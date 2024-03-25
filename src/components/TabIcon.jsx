@@ -9,9 +9,12 @@ import {
 } from 'iconsax-react-native';
 import {SCREEN} from '../utils/routes';
 import {COLOR} from '../theme/color';
+import {useSelector} from 'react-redux';
 
 export default function TabIcon({color, route, focused, size}) {
-  const [count, setCount] = useState(1);
+  const state = useSelector(state => state.carts);
+  // console.log(state.carts);
+  // const [count, setCount] = useState(1);
   const getIcon = () => {
     switch (route.name) {
       case SCREEN.HOME:
@@ -42,14 +45,14 @@ export default function TabIcon({color, route, focused, size}) {
         return focused ? (
           <View>
             <View style={styles.badgeContainer}>
-              <Text style={styles.text}>{count}</Text>
+              <Text style={styles.text}>{state.carts.length}</Text>
             </View>
             <ShoppingCart size={size} color={color} variant="Bold" />
           </View>
         ) : (
           <View>
             <View style={styles.badgeContainer}>
-              <Text style={styles.text}>{count}</Text>
+              <Text style={styles.text}>{state.carts.length}</Text>
             </View>
             <ShoppingCart size={size} color="gray" />
           </View>

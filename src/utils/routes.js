@@ -7,4 +7,7 @@ export const SCREEN = {
   SEARCH: 'Search',
   TAB: 'TabNavigation',
   PRODUCT_DETAILS: 'Product Details',
+  CHECKOUT: 'Checkout',
+  LOGIN: 'Login',
+  REGISTER: 'Register',
 };

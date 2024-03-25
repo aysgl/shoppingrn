@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {
   FlatList,
   Image,
@@ -6,48 +7,96 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {screenStyles} from '../style/screenStyle';
-import {fetchCart} from '../services/api';
 import {COLOR} from '../theme/color';
+import H3 from '../components/H3';
+import Button from '../components/Button';
+import {Moon, Notification, UserSquare} from 'iconsax-react-native';
 
 export default function Profile() {
-  const [carts, setCarts] = useState([]);
-
-  useEffect(() => {
-    fetchCart()
-      .then(res => setCarts(res))
-      .catch(err => console.log(err));
-  }, []);
+  const data = [
+    {
+      name: 'Profile',
+      items: [
+        {
+          item: 'Manage User',
+          icon: (
+            <UserSquare
+              size="28"
+              style={[{color: COLOR.PRIMARY, marginEnd: 10}]}
+            />
+          ),
+        },
+      ],
+    },
+    {
+      name: 'Settings',
+      items: [
+        {
+          item: 'Notifications',
+          icon: (
+            <Notification
+              size="28"
+              style={[{color: COLOR.PRIMARY, marginEnd: 10}]}
+            />
+          ),
+        },
+        {
+          item: 'Dark Mode',
+          icon: (
+            <Moon size="28" style={[{color: COLOR.PRIMARY, marginEnd: 10}]} />
+          ),
+        },
+      ],
+    },
+  ];
 
   const renderItem = ({item}) => (
-    <TouchableOpacity style={styles.cart}>
-      <Image
-        source={{uri: item?.images[0]}}
-        style={styles.image}
-        resizeMode="contain"
-      />
-      <View style={styles.item}>
-        <View>
-          <Text style={styles.title}>
-            {item.brand} {item.model}
-          </Text>
-          <Text style={styles.category}>{item.category}</Text>
-        </View>
+    <View>
+      <H3 title={item.name} />
+      <View>
+        {item.items.map(subItem => (
+          <TouchableOpacity>
+            <View style={styles.cart}>
+              {subItem.icon}
+              <Text key={subItem.item} style={styles.title}>
+                {subItem.item}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        ))}
       </View>
-    </TouchableOpacity>
+    </View>
   );
 
   return (
-    <FlatList
-      style={screenStyles.body}
-      data={carts}
-      renderItem={renderItem}
-      ListEmptyComponent={
-        <Text style={styles.empty}>Your favoritelist is empty.</Text>
-      }
-      keyExtractor={(item, index) => index.toString()}
-    />
+    <View style={{flex: 1, backgroundColor: COLOR.WHITE, padding: 20}}>
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image
+          source={{
+            uri: 'https://cultivatedculture.com/wp-content/uploads/2019/12/LinkedIn-Profile-Picture-Example-Rachel-Montan%CC%83ez.jpeg',
+          }}
+          style={{width: 100, height: 100, borderRadius: 100, marginBottom: 10}}
+        />
+        <Text style={styles.username}>Jane Doe</Text>
+      </View>
+      <FlatList
+        style={screenStyles.body}
+        data={data}
+        renderItem={renderItem}
+        ListEmptyComponent={
+          <Text style={styles.empty}>Your favorite list is empty.</Text>
+        }
+        keyExtractor={(item, index) => index.toString()}
+      />
+      <Button title={'Log Out'} />
+    </View>
   );
 }
 
@@ -58,32 +107,24 @@ const styles = StyleSheet.create({
   },
   cart: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottomWidth: 1,
-    padding: 10,
-    paddingHorizontal: 20,
-    borderColor: COLOR.GRAY,
+    paddingVertical: 10,
+    marginBottom: 20,
   },
   title: {
     fontSize: 16,
     fontWeight: '600',
   },
-  image: {
-    width: 60,
-    height: 60,
-    borderRadius: 100,
-    marginRight: 10,
-    objectFit: 'cover',
-  },
   item: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  category: {
-    paddingTop: 5,
-    color: COLOR.DARK_GRAY,
+  username: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: '200',
+    marginBottom: 50,
   },
 });
