@@ -29,10 +29,10 @@ import {getProduct, updateFavorite} from '../redux/productsAction';
 export default function ProductDetail({route}) {
   const {data} = route.params;
 
-  const state = useSelector(state => state.products);
-  console.log('state', state.products.favorite);
+  const state = useSelector(state => state.products.product);
+  console.log('state', state);
 
-  const [count, setCount] = useState(state?.products?.quantity);
+  const [count, setCount] = useState(state?.product?.quantity);
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -71,33 +71,29 @@ export default function ProductDetail({route}) {
         <ArrowLeft size={32} color={COLOR.PRIMARY} />
       </TouchableOpacity>
       <ScrollView>
-        <Slider images={state?.products?.images} />
+        <Slider images={state?.images} />
         <View style={screenStyles.container}>
-          <H2
-            title={`${state?.products?.brand + ' ' + state?.products?.model}`}
-          />
+          <H2 title={`${state?.brand + ' ' + state?.model}`} />
           <View style={styles.heart}>
             <View>
-              <Text style={{marginBottom: 10}}>
-                {state?.products?.category}
-              </Text>
-              <H3 title={`$${state?.products?.price}`} />
+              <Text style={{marginBottom: 10}}>{state?.category}</Text>
+              <H3 title={`$${state?.price}`} />
             </View>
             <HeartIcon
-              favorite={state?.products?.favorite}
+              favorite={state?.favorite}
               updateFavorites={() =>
                 dispatch(
                   updateFavorite({
-                    id: state?.products?.id,
-                    favorite: !state?.products?.favorite,
+                    id: state?.id,
+                    favorite: !state?.favorite,
                   }),
                 )
               }
             />
           </View>
 
-          <SelectNumber sizes={state?.products?.size} />
-          <Text>{state?.products?.description}</Text>
+          <SelectNumber sizes={state?.size} />
+          <Text>{state?.description}</Text>
         </View>
       </ScrollView>
       <View style={styles.row}>

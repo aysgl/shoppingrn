@@ -13,6 +13,7 @@ const productsSlice = createSlice({
   name: 'Products',
   initialState: {
     products: [],
+    product: [],
     favorites: [],
     categories: [],
     isLoading: false,
@@ -43,7 +44,7 @@ const productsSlice = createSlice({
       .addCase(getProduct.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
-        state.products = action.payload;
+        state.product = action.payload;
       })
       .addCase(addProduct.pending, state => {
         state.isLoading = true;
