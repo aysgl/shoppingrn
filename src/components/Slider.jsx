@@ -2,9 +2,7 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React, {useState} from 'react';
 import {SectionList, TouchableOpacity, View} from 'react-native';
-// import {TouchableOpacity} from 'react-native-gesture-handler';
 import ImagePill from '../components/ImagePill';
-import {width} from '../utils/constants';
 import {COLOR} from '../theme/color';
 
 export default function Slide({images}) {
@@ -21,7 +19,7 @@ export default function Slide({images}) {
           width={'100%'}
           height={450}
           borderRadius={0}
-          src={images[activeIndex]}
+          src={images?.[activeIndex]}
           active={true}
         />
       </View>

@@ -45,14 +45,14 @@ export default function TabIcon({color, route, focused, size}) {
         return focused ? (
           <View>
             <View style={styles.badgeContainer}>
-              <Text style={styles.text}>{state.carts.length}</Text>
+              <Text style={styles.text}>{state?.carts?.length}</Text>
             </View>
             <ShoppingCart size={size} color={color} variant="Bold" />
           </View>
         ) : (
           <View>
             <View style={styles.badgeContainer}>
-              <Text style={styles.text}>{state.carts.length}</Text>
+              <Text style={styles.text}>{state?.carts?.length}</Text>
             </View>
             <ShoppingCart size={size} color="gray" />
           </View>

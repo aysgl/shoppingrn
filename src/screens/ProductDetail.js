@@ -17,19 +17,22 @@ import {ArrowLeft} from 'iconsax-react-native';
 import {useNavigation} from '@react-navigation/native';
 import Slider from '../components/Slider';
 import HeartIcon from '../components/HeartIcon';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   addToCart,
   deleteCart,
   getCarts,
   updateCartItemQuantity,
 } from '../redux/cartsAction';
-import {updateFavorite} from '../redux/productsAction';
+import {getProduct, updateFavorite} from '../redux/productsAction';
 
 export default function ProductDetail({route}) {
   const {data} = route.params;
 
-  const [count, setCount] = useState(data.quantity);
+  const state = useSelector(state => state.products);
+  console.log('state', state.products.favorite);
+
+  const [count, setCount] = useState(state?.products?.quantity);
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -52,8 +55,8 @@ export default function ProductDetail({route}) {
 
   useEffect(() => {
     dispatch(getCarts());
-    // dispatch(updateFavorite());
-  }, [dispatch, data.quantity, data.favorite]);
+    dispatch(getProduct(data?.id));
+  }, [dispatch, data?.id]);
 
   const handleAddToCart = () => {
     dispatch(addToCart(data));
@@ -68,27 +71,33 @@ export default function ProductDetail({route}) {
         <ArrowLeft size={32} color={COLOR.PRIMARY} />
       </TouchableOpacity>
       <ScrollView>
-        <Slider images={data?.images} />
+        <Slider images={state?.products?.images} />
         <View style={screenStyles.container}>
-          <H2 title={`${data?.brand + ' ' + data?.model}`} />
+          <H2
+            title={`${state?.products?.brand + ' ' + state?.products?.model}`}
+          />
           <View style={styles.heart}>
             <View>
-              <Text style={{marginBottom: 10}}>{data?.category}</Text>
-              <H3 title={`$${data?.price}`} />
+              <Text style={{marginBottom: 10}}>
+                {state?.products?.category}
+              </Text>
+              <H3 title={`$${state?.products?.price}`} />
             </View>
             <HeartIcon
-              favorite={data?.favorite}
+              favorite={state?.products?.favorite}
               updateFavorites={() =>
                 dispatch(
-                  updateFavorite({id: data.id, favorite: !data.favorite}),
+                  updateFavorite({
+                    id: state?.products?.id,
+                    favorite: !state?.products?.favorite,
+                  }),
                 )
               }
             />
           </View>
 
-          <SelectNumber sizes={data?.size} />
-
-          <Text>{data?.description}</Text>
+          <SelectNumber sizes={state?.products?.size} />
+          <Text>{state?.products?.description}</Text>
         </View>
       </ScrollView>
       <View style={styles.row}>

@@ -6,6 +6,7 @@ import {
   getProducts,
   updateFavorite,
   getCategories,
+  getProduct,
 } from './productsAction';
 
 const productsSlice = createSlice({
@@ -28,6 +29,18 @@ const productsSlice = createSlice({
         state.isError = true;
       })
       .addCase(getProducts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isError = false;
+        state.products = action.payload;
+      })
+      .addCase(getProduct.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(getProduct.rejected, state => {
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(getProduct.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isError = false;
         state.products = action.payload;

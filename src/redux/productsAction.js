@@ -9,6 +9,15 @@ export const getProducts = createAsyncThunk(
   },
 );
 
+export const getProduct = createAsyncThunk('products/getProduct', async id => {
+  try {
+    const response = await axios.get(`http://localhost:3001/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log('Failed to fetch product.');
+  }
+});
+
 export const addProduct = createAsyncThunk(
   'products/addProduct',
   async data => {
