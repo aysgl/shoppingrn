@@ -27,7 +27,7 @@ export default function Slide({images}) {
         horizontal={true}
         style={{marginTop: -130, marginLeft: 16}}
         ItemSeparatorComponent={FlatListItemSeparator}
-        sections={[{title: '', data: images}]}
+        sections={[{title: '', data: images || []}]}
         renderItem={({item, index}) => (
           <View style={{padding: 6, zIndex: 1000}}>
             <TouchableOpacity

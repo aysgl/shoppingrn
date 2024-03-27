@@ -16,11 +16,7 @@ import {COLOR} from '../theme/color';
 import {useNavigation} from '@react-navigation/native';
 import {SCREEN} from '../utils/routes';
 import {useDispatch, useSelector} from 'react-redux';
-import {
-  deleteCart,
-  getCarts,
-  updateCartItemQuantity,
-} from '../redux/cartsAction';
+import {decrementQuantity, incrementQuantity} from '../redux/cartsSlice';
 
 export default function Cart() {
   const state = useSelector(state => state.carts);
@@ -31,14 +27,10 @@ export default function Cart() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    dispatch(getCarts());
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (state.carts) {
+    if (state?.carts) {
       let initialCounts = {};
       let tempSubTotal = 0;
-      state.carts.forEach(item => {
+      state?.carts.forEach(item => {
         initialCounts[item.id] = item.quantity;
         tempSubTotal += item.price * item.quantity;
       });
@@ -46,11 +38,11 @@ export default function Cart() {
       setSubTotal(tempSubTotal);
       updateTotal();
     }
-  }, [state.carts]);
+  }, [state?.carts]);
 
   useEffect(() => {
     updateTotal();
-  }, [counts, state.carts]);
+  }, [counts, state?.carts]);
 
   const updateTotal = () => {
     let tempTotal = subTotal;
@@ -62,29 +54,7 @@ export default function Cart() {
     setTotal(totalPrice);
   };
 
-  const handleIncrement = (itemId, itemQuantity) => {
-    const newQuantity = itemQuantity + 1;
-    dispatch(updateCartItemQuantity({itemId, newQuantity}));
-    setCounts(prevCounts => ({...prevCounts, [itemId]: newQuantity}));
-    updateTotal();
-  };
-
-  const handleDecrement = (itemId, itemQuantity) => {
-    if (itemQuantity > 1) {
-      const newQuantity = itemQuantity - 1;
-      dispatch(updateCartItemQuantity({itemId, newQuantity}));
-      setCounts(prevCounts => ({...prevCounts, [itemId]: newQuantity}));
-      updateTotal();
-    } else {
-      dispatch(deleteCart(itemId));
-      const {[itemId]: deletedItem, ...restCounts} = counts;
-      setCounts(restCounts);
-      updateTotal();
-    }
-  };
-
   const renderItem = ({item}) => {
-    const itemQuantity = counts[item.id] || 1;
     return (
       <TouchableOpacity style={styles.cart}>
         <Image
@@ -102,13 +72,13 @@ export default function Cart() {
             <View style={styles.countContainer}>
               <TouchableOpacity
                 style={styles.minus}
-                onPress={() => handleDecrement(item.id, itemQuantity)}>
+                onPress={() => dispatch(decrementQuantity(item.id))}>
                 <Text>-</Text>
               </TouchableOpacity>
-              <Text>{itemQuantity}</Text>
+              <Text>{item.quantity}</Text>
               <TouchableOpacity
                 style={styles.plus}
-                onPress={() => handleIncrement(item.id, itemQuantity)}>
+                onPress={() => dispatch(incrementQuantity(item.id))}>
                 <Text style={styles.plusText}>+</Text>
               </TouchableOpacity>
             </View>
@@ -119,24 +89,28 @@ export default function Cart() {
   };
 
   const renderFooter = () => (
-    <View style={styles.footer}>
-      <View style={styles.text}>
-        <Text>Subtotal</Text>
-        <Text>${subTotal}</Text>
-      </View>
-      <View style={styles.text}>
-        <Text>Delivery Fee</Text>
-        <Text>$10</Text>
-      </View>
-      <View style={styles.text}>
-        <Text>Discount</Text>
-        <Text>%0</Text>
-      </View>
-      <View style={[styles.text, {paddingVertical: 30}]}>
-        <Text>Total</Text>
-        <Text style={{fontSize: 20}}>${total}</Text>
-      </View>
-    </View>
+    <>
+      {state?.carts?.length > 0 && (
+        <View style={styles.footer}>
+          <View style={styles.text}>
+            <Text>Subtotal</Text>
+            <Text>${subTotal}</Text>
+          </View>
+          <View style={styles.text}>
+            <Text>Delivery Fee</Text>
+            <Text>$10</Text>
+          </View>
+          <View style={styles.text}>
+            <Text>Discount</Text>
+            <Text>%0</Text>
+          </View>
+          <View style={[styles.text, {paddingVertical: 30}]}>
+            <Text>Total</Text>
+            <Text style={{fontSize: 20}}>${total}</Text>
+          </View>
+        </View>
+      )}
+    </>
   );
 
   return (
@@ -146,18 +120,22 @@ export default function Cart() {
         data={state?.carts}
         renderItem={renderItem}
         ListEmptyComponent={
-          <Text style={styles.emptyCartText}>Your cart is empty.</Text>
+          <View style={styles.emptyCartText}>
+            <Text style={{fontSize: 16}}>Your cart is empty.</Text>
+          </View>
         }
         keyExtractor={(item, index) => index.toString()}
         ListFooterComponent={renderFooter}
       />
-      <View style={{padding: 20, paddingTop: 0}}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate(SCREEN.LOGIN)}>
-          <Text>Check out</Text>
-        </TouchableOpacity>
-      </View>
+      {state?.carts?.length > 0 && (
+        <View style={{padding: 20, paddingTop: 0}}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate(SCREEN.LOGIN)}>
+            <Text>Check out</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 }
@@ -165,8 +143,9 @@ export default function Cart() {
 const styles = StyleSheet.create({
   emptyCartText: {
     fontSize: 16,
-    textAlign: 'center',
-    marginTop: 20,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cart: {
     flexDirection: 'row',

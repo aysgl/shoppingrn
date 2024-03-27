@@ -84,7 +84,7 @@
       ],
       "price": 90,
       "quantity": 1,
-      "favorite": true,
+      "favorite": false,
       "description": "The Puma Future Rider Twofold combines retro style with modern comfort. It features a nylon upper with suede overlays and a cushioned footbed for all-day wearability.",
       "images": [
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cb1951e7-0600-4f7a-9b26-12be8cd2bd01/air-max-270-ayakkab%C4%B1s%C4%B1-9KTdg8qw.png",
@@ -479,11 +479,100 @@
   ],
   "carts": [
     {
-      "id": "8",
-      "brand": "Puma",
+      "id": "1",
+      "brand": "Nike",
+      "category": "Woman",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "price": 150,
+      "quantity": 3,
+      "favorite": true,
+      "description": "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6004834-6adf-493b-8d6e-8ef5e1556216/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c4e9864-1e8f-45c1-97a4-20b571f78335/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1e8ec42-880c-4350-b3a3-3d2e3a506bfc/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png"
+      ]
+    },
+    {
+      "id": "1",
+      "brand": "Nike",
+      "category": "Woman",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "price": 150,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6004834-6adf-493b-8d6e-8ef5e1556216/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c4e9864-1e8f-45c1-97a4-20b571f78335/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1e8ec42-880c-4350-b3a3-3d2e3a506bfc/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png"
+      ]
+    },
+    {
+      "id": "3",
+      "brand": "New Balance",
+      "category": "Children",
+      "model": "Fresh Foam 1080v11",
+      "color": "Black/White",
+      "size": [
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "price": 100,
+      "quantity": 1,
+      "favorite": false,
+      "description": "The New Balance Fresh Foam 1080v11 offers a plush ride with ample cushioning and a breathable mesh upper. It is ideal for long-distance running and everyday wear.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f5ce9401-eb95-4df0-8ae1-dac2a9fe8847/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6b19dc55-ddec-42c3-9db1-fec0a9f676e8/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8de0a8b6-8276-49d7-a25d-5a6c576413ed/jordan-1-mid-ayakkab%C4%B1s%C4%B1-MQZQBN.png"
+      ]
+    },
+    {
+      "id": "1",
+      "brand": "Nike",
+      "category": "Woman",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39"
+      ],
+      "price": 150,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Nike Air Max 270 delivers visible cushioning under every step. Updated for modern comfort, it pays homage to the original 1991 Air Max 180 with an exaggerated tongue top and heritage logo.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b6004834-6adf-493b-8d6e-8ef5e1556216/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c4e9864-1e8f-45c1-97a4-20b571f78335/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f1e8ec42-880c-4350-b3a3-3d2e3a506bfc/air-max-270-gen%C3%A7-ayakkab%C4%B1s%C4%B1-9KTdjGPz.png"
+      ]
+    },
+    {
+      "id": "2",
+      "brand": "Adidas",
       "category": "Man",
-      "model": "RS-X³ Puzzle",
-      "color": "White/Black/Yellow",
+      "model": "Ultraboost 21",
+      "color": "Core Black/Grey Six/Solar Red",
       "size": [
         "36",
         "37",
@@ -493,14 +582,39 @@
         "41",
         "42"
       ],
-      "price": 110,
+      "price": 180,
       "quantity": 3,
-      "favorite": false,
-      "description": "The Puma RS-X³ Puzzle offers a bold and futuristic design. It features a textile upper, chunky sole, and eye-catching colorway.",
+      "favorite": true,
+      "description": "The Adidas Ultraboost 21 offers a comfortable, responsive ride with a sleek design. It features Boost cushioning technology and a supportive Primeknit upper.",
       "images": [
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2a3367c8-2dd0-42a5-8eb2-adfa2b7ed48f/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/acab406b-b0e6-4210-a41f-69037f4f9138/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5dc4c0ca-6204-40e4-8e86-6562a67e0010/phantom-gx-2-elite-fg-d%C3%BC%C5%9F%C3%BCk-bilekli-krampon-bxntVZ.png"
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40e9a096-e6cc-4c39-aec8-46a330f80681/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a605e57-6a9c-44a6-88c1-bdf486b9aa33/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18c8fc53-0dfe-45e4-aff9-6f3de49d34f0/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png"
+      ]
+    },
+    {
+      "id": "2",
+      "brand": "Adidas",
+      "category": "Man",
+      "model": "Ultraboost 21",
+      "color": "Core Black/Grey Six/Solar Red",
+      "size": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "price": 180,
+      "quantity": 1,
+      "favorite": true,
+      "description": "The Adidas Ultraboost 21 offers a comfortable, responsive ride with a sleek design. It features Boost cushioning technology and a supportive Primeknit upper.",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/40e9a096-e6cc-4c39-aec8-46a330f80681/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1a605e57-6a9c-44a6-88c1-bdf486b9aa33/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/18c8fc53-0dfe-45e4-aff9-6f3de49d34f0/invincible-3-yol-ko%C5%9Fu-ayakkab%C4%B1s%C4%B1-0k2VkM.png"
       ]
     }
   ],
@@ -510,6 +624,9 @@
       "email": "Aysgl.avcu@hotmail.com",
       "username": "Aysgl",
       "password": "Aysgl"
+    },
+    {
+      "id": "f23d"
     }
   ],
   "login": [

@@ -33,7 +33,7 @@ export default function Login() {
       id: '41b6',
     };
 
-    if (state.auth.id === data.id) {
+    if (state?.auth.id === data?.id) {
       dispatch(postLogin(data));
       navigation.navigate(SCREEN.CART);
     } else {

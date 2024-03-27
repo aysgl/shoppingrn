@@ -19,20 +19,21 @@ import Slider from '../components/Slider';
 import HeartIcon from '../components/HeartIcon';
 import {useDispatch, useSelector} from 'react-redux';
 import {
-  addToCart,
   deleteCart,
   getCarts,
   updateCartItemQuantity,
 } from '../redux/cartsAction';
 import {getProduct, updateFavorite} from '../redux/productsAction';
+import {addToCart} from '../redux/cartsSlice';
+import {SCREEN} from '../utils/routes';
 
 export default function ProductDetail({route}) {
   const {data} = route.params;
 
   const state = useSelector(state => state.products.product);
-  console.log('state', state);
 
-  const [count, setCount] = useState(state?.product?.quantity);
+  const [count, setCount] = useState(state?.product?.quantity ?? 1);
+
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -48,7 +49,6 @@ export default function ProductDetail({route}) {
       dispatch(updateCartItemQuantity({itemId, newQuantity}));
       setCount(newQuantity);
     } else {
-      dispatch(deleteCart(itemId));
       setCount(0);
     }
   };
@@ -57,11 +57,6 @@ export default function ProductDetail({route}) {
     dispatch(getCarts());
     dispatch(getProduct(data?.id));
   }, [dispatch, data?.id]);
-
-  const handleAddToCart = () => {
-    dispatch(addToCart(data));
-    navigation.navigate('Cart');
-  };
 
   return (
     <View style={screenStyles.body}>
@@ -81,32 +76,46 @@ export default function ProductDetail({route}) {
             </View>
             <HeartIcon
               favorite={state?.favorite}
-              updateFavorites={() =>
+              updateFavorites={() => {
                 dispatch(
                   updateFavorite({
                     id: state?.id,
                     favorite: !state?.favorite,
                   }),
-                )
-              }
+                );
+                dispatch(getProduct(data?.id));
+              }}
             />
           </View>
-
           <SelectNumber sizes={state?.size} />
           <Text>{state?.description}</Text>
         </View>
       </ScrollView>
       <View style={styles.row}>
         <View style={styles.count}>
-          <TouchableOpacity style={styles.minus} onPress={handleDecrement}>
+          <TouchableOpacity
+            style={styles.minus}
+            onPress={() => handleDecrement(state?.id)}>
             <Text>-</Text>
           </TouchableOpacity>
           <Text>{count}</Text>
-          <TouchableOpacity style={styles.plus} onPress={handleIncrement}>
+          <TouchableOpacity
+            style={styles.plus}
+            onPress={() => handleIncrement(state?.id)}>
             <Text style={{color: COLOR.WHITE}}>+</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button} onPress={handleAddToCart}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            dispatch(
+              addToCart({
+                product: state,
+                quantity: count,
+              }),
+              navigation.navigate(SCREEN.CART),
+            );
+          }}>
           <Text>Add to Cart</Text>
         </TouchableOpacity>
       </View>
